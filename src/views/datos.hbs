@@ -32,6 +32,12 @@
       color: #333;
       font-size: 18px;
     }
+    .google-style-content2 {
+      text-align: center;
+      color: #0987c2;
+      font-size: 20px;
+      font-weight: bold;
+    }
     #exportPDF {
       padding: 10px;
       background-color: #0ba6bb;
@@ -49,11 +55,17 @@
 <div id="html2pdf">
   <div class="wrapper">
     <div class="content-wrapper">
-      <div class="google-style-title">Datos: {{Dtos.R1}}</div>
+      <div class="google-style-title">Datos: {{user.name}}</div>
+      <div class="google-style-content">
+        <script>
+          var num1  = localStorage.getItem('num1');
+          document.write("Su hora solar pico es: " + num1 + "KWh/m2" + "\n");
+        </script>
+      </div>
       <div class="google-style-content">
         <script>
           var inversor = localStorage.getItem('inversor');
-          document.write("Necesita un inversor de al menos: " + inversor + "\n");
+          document.write("Necesita un inversor de al menos: " + inversor + "Watts" + "\n");
         </script>
       </div>
       <div class="google-style-content">
@@ -62,13 +74,27 @@
           document.write("El número de paneles necesitados es: " + resultadoreal + "\n");
         </script>
       </div>
+      
       <div class="google-style-content">
+        <script>
+          var promediomesreal= localStorage.getItem('promediomes');
+          document.write("Su gasto promedio en el mes es : " + promediomesreal + "Kwatts" +"\n");
+        </script>
+      </div>
+      <div class="google-style-content">
+        <script>
+          var promediodiasreal= localStorage.getItem('promediodias');
+          document.write("Su gasto promedio en el dia es : " + promediodiasreal + "Kwatts" +"\n");
+        </script>
+      </div>
+      <div class="google-style-content2">
         <script>
           var precio = localStorage.getItem('precio');
           document.write("El precio del sistema es: " + precio + "$" + "\n");
         </script>
-        <div id="container"></div>
+       
       </div>
+       <div id="container"></div>
       <div style="padding: 0 50px;">
         <button style="padding: 10px;" id="exportPDF">PDF</button>
       </div>
