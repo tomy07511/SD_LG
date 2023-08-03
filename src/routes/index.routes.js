@@ -13,6 +13,6 @@ router.get("/pedir", renderpedir);
 router.get("/Info", renderInfo);
 router.get("/datos", renderdatos);
 router.post("/Dtos", guardarDtos);
-
+router.get("/Dtos", guardarDtos);
 
 module.exports = router;

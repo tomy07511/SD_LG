@@ -4,8 +4,14 @@ const Schema = mongoose.Schema;
 
 const DtosSchema = new Schema({
   num1: { type: Number, default: 0 },
-  num2: { type: Number, default: 0 },
-  num3: { type: Number, default: 0 },
+  num2: {
+    type: String,
+    required: false
+  },
+  num3: {
+    type: String,
+    required: false
+  },
   R1: { type: Number, default: 0 },
   R2: { type: Number, default: 0 },
   R3: { type: Number, default: 0 },
